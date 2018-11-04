@@ -1,11 +1,11 @@
 @extends('home')
-@section('title', 'Danh sách khách hàng')
+@section('title', __('messages.customer_list'))
 
 @section('content')
     <div class="col-12">
         <div class="row">
             <div class="col-12">
-                <h1>Danh Sách Khách Hàng</h1>
+                <h3>{{__('messages.customer_list')}}</h3>
             </div>
             <div class="col-12">
                 @if (Session::has('success'))
@@ -19,8 +19,8 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tên khách hàng</th>
-                    <th scope="col">Ngày Sinh</th>
+                    <th scope="col">{{ __('messages.name_customer') }}</th>
+                    <th scope="col">{{ __('messages.birth_day') }}</th>
                     <th scope="col">Email</th>
                     <th></th>
                     <th></th>
@@ -38,14 +38,14 @@
                         <td>{{ $customer->name }}</td>
                         <td>{{ $customer->dob }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td><a href="{{ route('customers.edit', $customer->id) }}">sửa</a></td>
-                        <td><a href="{{ route('customers.destroy', $customer->id) }}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
+                        <td><a href="{{ route('customers.edit', $customer->id) }}">{{ __('messages.update') }}</a></td>
+                        <td><a href="{{ route('customers.destroy', $customer->id) }}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">{{__('messages.delete')}}</a></td>
                     </tr>
                     @endforeach
                 @endif
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
+            <a class="btn btn-primary" href="{{ route('customers.create') }}">{{__('messages.add_new')}}</a>
         </div>
     </div>
 @endsection

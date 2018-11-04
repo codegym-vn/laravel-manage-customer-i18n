@@ -5,6 +5,8 @@
 
 - Thực hành CRUD cơ bản
 
+- Đa ngôn ngữ i18n
+
 #
 Mã nguồn được sử dụng trong thực hành tại <a href="https://codegym.vn">CodeGym</a>
 
